@@ -5,10 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kano.calc.entity.PlCalcForm;
 
 @Controller
+@RequestMapping("/web")
 public class KanoCalcController {
 
 	@ModelAttribute("plCalcForm")
@@ -27,6 +29,11 @@ public class KanoCalcController {
 		// 追加することで、画面側で入力したデータをサーバに渡すときの器としてのインスタンスが用意される
 		model.addAttribute("plCalcForm", new PlCalcForm());
 		return "web/plCalc";
+	}
+	
+	@PostMapping(value="/pl-calc-exec",params="title_btn")
+	public String pagebackTitle() {
+		return "web/title";
 	}
 
 //	@GetMapping("/trip-calc")

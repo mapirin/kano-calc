@@ -5,7 +5,9 @@
 		<title>PL CALCULE</title>
 	</head>
 	<body>
-		<form th:action="@{/pl-calc-exec}" th:object="${plCalcForm}" method="post">
+		<form th:action="@{/web/pl-calc-exec}" th:object="${plCalcForm}" method="post">
+			<input type="submit" name="title_btn" value="title"/>
+			<br>
 			前月の貯金
 			<input type="text" th:field="*{storeMoney}"/>
 			収入
