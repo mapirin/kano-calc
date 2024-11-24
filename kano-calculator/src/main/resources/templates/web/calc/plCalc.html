@@ -5,11 +5,7 @@
 		<title>PL CALCULE</title>
 	</head>
 	<body>
-		<form th:action="@{/pl-calc-exex}" th:object="${plCalcForm}" method="post">
-			<header>
-				!-- 年月 + 今月の合計
-			</header>
-			
+		<form th:action="@{/pl-calc-exec}" th:object="${plCalcForm}" method="post">
 			<p>
 				<input type="text" th:field="*{storeMoney}"/>
 				+
@@ -21,7 +17,6 @@
 			<table>
 				<tr>
 					<td>
-						!-- 計算したい　js 3項目どれかが入力されたタイミングで3つの値計算
 						<input type="text" th:field="*{totalCardCost}"/>
 					</td>
 				</tr>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>TITLE</title>
+	</head>
+	<body>
+		<form th:action="@{/pl-calc}" method="post">
+			<input type="submit" name="plCalc" value="PlCalc"/>
+		</form>
+	</body>
 </html>
