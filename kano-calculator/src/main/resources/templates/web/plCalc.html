@@ -6,18 +6,30 @@
 	</head>
 	<body>
 		<form th:action="@{/pl-calc-exec}" th:object="${plCalcForm}" method="post">
-			<p>
-				<input type="text" th:field="*{storeMoney}"/>
-				+
-				<input type="text" th:field="*{income}"/>
-				=
-				<input type="text" th:field="*{totalMoney}"/>
-			</p>
+			前月の貯金
+			<input type="text" th:field="*{storeMoney}"/>
+			収入
+			<input type="text" th:field="*{income}"/>
+			<br>
+			合計(計算結果をラベルにしたい)
+			<input type="text" th:field="*{totalMoney}"/>
+			
+			<br>
 			<br>
 			<table>
 				<tr>
 					<td>
+						カード合計	(計算結果をラベルにしたい)
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<input type="text" th:field="*{totalCardCost}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						aupay	
 					</td>
 				</tr>
 				<tr>
@@ -27,7 +39,17 @@
 				</tr>
 				<tr>
 					<td>
+						sezon
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<input type="text" th:field="*{seCardCost}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						ana	
 					</td>
 				</tr>
 				<tr>

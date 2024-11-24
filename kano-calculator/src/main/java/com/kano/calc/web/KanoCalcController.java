@@ -1,21 +1,32 @@
 package com.kano.calc.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.kano.calc.entity.PlCalcForm;
 
 @Controller
 public class KanoCalcController {
 
+	@ModelAttribute("plCalcForm")
+	public PlCalcForm setPlCalcForm() {
+		return new PlCalcForm();
+	}
+	
 	@GetMapping("/title")
 	public String title() {
-		return "web/calc/title";
+		return "web/title";
 	}
 
 	@PostMapping(value="/pl-calc",params="plCalc")
-	public String pagePlCalc() {
-		return "web/calc/plCalc";
+	public String pagePlCalc(Model model) {
+		// modelに遷移先画面のFormのインスタンスを追加する必要があった
+		// 追加することで、画面側で入力したデータをサーバに渡すときの器としてのインスタンスが用意される
+		model.addAttribute("plCalcForm", new PlCalcForm());
+		return "web/plCalc";
 	}
 
 //	@GetMapping("/trip-calc")
