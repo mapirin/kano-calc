@@ -9,12 +9,12 @@
 			<input type="submit" name="title_btn" value="title"/>
 			<br>
 			前月の貯金
-			<input type="text" th:field="*{storeMoney}"/>
+			<input type="text" id="storeMoney" th:field="*{storeMoney}"/>
 			収入
-			<input type="text" th:field="*{income}"/>
+			<input type="text" id="income" th:field="*{income}"/>
 			<br>
 			合計(計算結果をラベルにしたい)
-			<input type="text" th:field="*{totalMoney}"/>
+			<input type="text" id="totalMoney" th:field="*{totalMoney}"/>
 			
 			<br>
 			<br>
@@ -62,4 +62,7 @@
 			</table>
 		</form>
 	</body>
+		
+	<script src="/js/plCalc.js" defer>
+	</script>
 </html>
